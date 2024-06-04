@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boilerplate code</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script type="text/javascript">
+        function QuotesClick() {
+            var assignment = document.getElementById("assignmentrule").value;
+            var assignmenterror = document.getElementById("assignerror")
+
+            var firstname = document.getElementById("fname").value;
+            var firstnameerror = document.getElementById("fnameerror")
+
+            if(firstname ==""){
+                firstnameerror.innerHTML = "first name is required".fontcolor("red").bold().italics();
+            }
+
+            if (assignment == "") {
+                assignmenterror.innerHTML = "This field is required".fontcolor("red").bold().italics();
+            }
+            console.log("clicked");
+        }
+        function assignmentBlur() {
+            var assignment = document.getElementById("assignmentrule").value;
+            var assignmenterror = document.getElementById("assignerror")
+
+            if (assignment != "") {
+                assignmenterror.innerHTML = "about is verified".bold().fontcolor("green")
+            }
+        }
+        function fnameBlur(){
+            var firstname = document.getElementById("fname").value;
+            var firstnameerror = document.getElementById("fnameerror")
+
+            if (firstname !== "" ){
+                firstnameerror.innerHTML = "first name is verified".bold().fontcolor("green")
+            }
+        }
+
+    </script>
+</head>
+
+<body class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="mb-3 mt-4">
+                <label for="assignmentrule">Anything else we should know about your assignment?</label>
+                <textarea onblur="assignmentBlur()" rows="4" id="assignmentrule" class="form-control" type="text"
+                    placeholder="A good and clear description gets more and better answers"></textarea>
+                <span><small style="color: brown;" id="assignerror"></small></span>
+            </div>
+            <div class="mb-3">
+                <label for="fname">First name</label>
+                <input onblur="fnameBlur()" id="fname" class="form-control" type="text" placeholder="first name">
+                <span><small style="color: brown;" id="fnameerror"></small></span>
+            </div>
+            <div class="mb-3">
+                <label for="sname">Surname</label>
+                <input id="sname" class="form-control" type="text" placeholder="Surname">
+            </div>
+            <div class="mb-3">
+                <label for="association"></label>Name of association"></label>
+                <input id="association" class="form-control" type="text" placeholder="Brf Name">
+            </div>
+            <div class="mb-3">
+                <input type="checkbox">
+                <span>Accept Terms of Use and Privacy Policy</span>
+            </div>
+            <div>
+                <input type="checkbox">
+                <span>Yes, thankyou I was recycla news letter</span>
+            </div>
+            <div class="mt-5">
+                <button class="btn btn-sm border border-sm ">Back</button>
+                <button onclick="QuotesClick()" class="float-right btn btn-success btn-sm">Get Quotes!</button>
+            </div>
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+
+</html>
